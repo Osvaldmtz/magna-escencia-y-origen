@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(201, 168, 76, ${p.opacity})`;
+        ctx.fillStyle = `rgba(181, 127, 99, ${p.opacity})`;
         ctx.fill();
       });
 
