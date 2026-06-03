@@ -50,6 +50,24 @@ body {
   line-height: 1.7;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  font-variant-numeric: lining-nums;
+  font-feature-settings: "lnum" 1;
+}
+
+input,
+textarea,
+select,
+button {
+  font-variant-numeric: lining-nums;
+  font-feature-settings: "lnum" 1;
+}
+
+h1, h2, h3, h4, h5,
+blockquote,
+.testimonial-card p,
+.testimonial-card-full blockquote {
+  font-variant-numeric: lining-nums;
+  font-feature-settings: "lnum" 1;
 }
 
 img {
@@ -851,6 +869,16 @@ body.page-home .navbar:not(.scrolled) .navbar-logo-light {
 .footer-contact p {
   font-size: 0.9rem;
   margin-bottom: 0.5rem;
+}
+
+.footer-contact p:last-of-type,
+.contact-detail span,
+.whatsapp-big span,
+input[type="tel"] {
+  font-variant-numeric: lining-nums tabular-nums;
+  font-feature-settings: "lnum" 1, "tnum" 1;
+  letter-spacing: 0.06em;
+  font-weight: 500;
 }
 
 .footer-social {
