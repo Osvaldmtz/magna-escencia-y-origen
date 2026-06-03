@@ -25,9 +25,7 @@
   --text-primary: #2B261F;
   --text-secondary: #4A433C;
   --navbar-bg: rgba(255, 252, 248, 0.96);
-  --logo-color: #2B261F;
   --logo-color-hero: #FFFFFF;
-  --logo-color-footer: #F5EDE6;
   --text-on-dark: #FFFFFF;
   --text-on-dark-muted: #F0E8E2;
   --gold-gradient: linear-gradient(90deg, transparent, var(--gold), transparent);
@@ -182,77 +180,53 @@ body.page-home .navbar:not(.scrolled) .hamburger span {
 .navbar-logo {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  width: 168px;
-  height: 58px;
-  padding: 0.45rem 1rem;
-  background: rgba(255, 252, 248, 0.98);
-  border: 1px solid rgba(var(--accent-rgb), 0.28);
-  border-radius: 8px;
-  box-shadow:
-    0 2px 14px rgba(var(--bg-dark-rgb), 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 1);
-  transition: all 0.4s ease;
   flex-shrink: 0;
+  line-height: 0;
 }
 
-.navbar-logo::before {
-  content: '';
+.navbar-logo-gold {
   display: block;
-  width: 132px;
-  height: 46px;
-  background-color: var(--logo-color);
+  height: 50px;
+  width: auto;
+  transition: height 0.4s ease, opacity 0.3s ease;
+}
+
+.navbar-logo-light {
+  display: none;
+  width: 148px;
+  height: 50px;
+  background-color: var(--logo-color-hero);
   -webkit-mask: url('../assets/img/logo-magna.svg') no-repeat center / contain;
   mask: url('../assets/img/logo-magna.svg') no-repeat center / contain;
-  transition: background-color 0.4s ease, height 0.4s ease, width 0.4s ease;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.35));
 }
 
-.navbar-logo:hover {
-  border-color: rgba(var(--accent-rgb), 0.45);
-  box-shadow:
-    0 4px 20px rgba(var(--bg-dark-rgb), 0.16),
-    inset 0 1px 0 rgba(255, 255, 255, 1);
+body.page-home .navbar:not(.scrolled) .navbar-logo-gold {
+  display: none;
 }
 
-.navbar.scrolled .navbar-logo::before {
-  height: 40px;
-  width: 118px;
+body.page-home .navbar:not(.scrolled) .navbar-logo-light {
+  display: block;
 }
 
-body.page-home .navbar:not(.scrolled) .navbar-logo {
-  background: rgba(43, 38, 31, 0.5);
-  border-color: rgba(255, 252, 248, 0.35);
-  backdrop-filter: blur(12px);
-  box-shadow:
-    0 4px 24px rgba(0, 0, 0, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.12);
-}
-
-body.page-home .navbar:not(.scrolled) .navbar-logo::before {
-  background-color: var(--logo-color-hero);
+.navbar.scrolled .navbar-logo-gold {
+  height: 42px;
 }
 
 .footer-logo {
   display: inline-block;
-  width: 168px;
-  height: 58px;
   margin-bottom: 1rem;
-  padding: 0.5rem 0.85rem;
-  background: rgba(255, 252, 248, 0.1);
-  border: 1px solid rgba(255, 252, 248, 0.22);
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.22);
+  line-height: 0;
 }
 
-.footer-logo::before {
-  content: '';
+.footer-logo-mark {
   display: block;
-  width: 132px;
-  height: 46px;
-  margin: 0 auto;
-  background-color: var(--logo-color-footer);
+  width: 150px;
+  height: 52px;
+  background-color: var(--logo-color-hero);
   -webkit-mask: url('../assets/img/logo-magna.svg') no-repeat center / contain;
   mask: url('../assets/img/logo-magna.svg') no-repeat center / contain;
+  filter: drop-shadow(0 2px 12px rgba(0, 0, 0, 0.3));
 }
 
 .navbar-menu {
