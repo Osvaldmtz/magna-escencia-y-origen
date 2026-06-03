@@ -419,6 +419,16 @@ body.page-home .navbar:not(.scrolled) .navbar-logo-light {
 
 .hero-content .btn-primary {
   animation: fadeInUp 1s ease 0.8s both;
+  color: var(--text-on-dark);
+  border-color: var(--text-on-dark);
+}
+
+.hero-content .btn-primary::before {
+  background: var(--text-on-dark);
+}
+
+.hero-content .btn-primary:hover {
+  color: var(--bg-secondary);
 }
 
 .hero-scroll-indicator {
@@ -757,12 +767,19 @@ body.page-home .navbar:not(.scrolled) .navbar-logo-light {
   font-size: 1.05rem;
 }
 
-.cta-section .btn-primary {
+.cta-section .btn-primary,
+.service-benefits .btn-primary {
   border-color: var(--text-on-dark);
   color: var(--text-on-dark);
 }
 
-.cta-section .btn-primary:hover {
+.cta-section .btn-primary::before,
+.service-benefits .btn-primary::before {
+  background: var(--text-on-dark);
+}
+
+.cta-section .btn-primary:hover,
+.service-benefits .btn-primary:hover {
   color: var(--bg-secondary);
 }
 
@@ -1104,8 +1121,17 @@ body.page-home .navbar:not(.scrolled) .navbar-logo-light {
 }
 
 .service-benefits h3 {
-  color: var(--gold);
+  color: var(--text-on-dark);
   margin-bottom: 1.5rem;
+}
+
+.service-benefits .benefits-list li {
+  color: var(--text-on-dark-muted);
+  border-bottom-color: rgba(255, 255, 255, 0.15);
+}
+
+.service-benefits .benefits-list li::before {
+  color: var(--gold-on-dark);
 }
 
 .benefits-list {
