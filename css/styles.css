@@ -25,6 +25,7 @@
   --text-primary: #2B261F;
   --text-secondary: #4A433C;
   --navbar-bg: rgba(255, 252, 248, 0.96);
+  --logo-filter-navbar: brightness(0) saturate(100%) invert(22%) sepia(22%) saturate(1400%) hue-rotate(358deg) brightness(88%) contrast(96%);
   --text-on-dark: #FFFFFF;
   --text-on-dark-muted: #F0E8E2;
   --gold-gradient: linear-gradient(90deg, transparent, var(--gold), transparent);
@@ -176,13 +177,53 @@ body.page-home .navbar:not(.scrolled) .hamburger span {
   justify-content: space-between;
 }
 
+.navbar-logo {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 1rem;
+  background: rgba(255, 252, 248, 0.98);
+  border: 1px solid rgba(var(--accent-rgb), 0.28);
+  border-radius: 8px;
+  box-shadow:
+    0 2px 14px rgba(var(--bg-dark-rgb), 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+  transition: all 0.4s ease;
+}
+
+.navbar-logo:hover {
+  border-color: rgba(var(--accent-rgb), 0.45);
+  box-shadow:
+    0 4px 20px rgba(var(--bg-dark-rgb), 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
 .navbar-logo img {
-  height: 50px;
-  transition: height 0.4s ease;
+  height: 48px;
+  width: auto;
+  display: block;
+  filter: var(--logo-filter-navbar);
+  transition: height 0.4s ease, filter 0.4s ease;
 }
 
 .navbar.scrolled .navbar-logo img {
   height: 40px;
+}
+
+body.page-home .navbar:not(.scrolled) .navbar-logo {
+  background: rgba(43, 38, 31, 0.5);
+  border-color: rgba(255, 252, 248, 0.35);
+  backdrop-filter: blur(12px);
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+body.page-home .navbar:not(.scrolled) .navbar-logo img {
+  filter:
+    brightness(1.2)
+    contrast(1.15)
+    drop-shadow(0 2px 10px rgba(0, 0, 0, 0.55))
+    drop-shadow(0 0 18px rgba(255, 252, 248, 0.35));
 }
 
 .navbar-menu {
@@ -750,9 +791,20 @@ body.page-home .navbar:not(.scrolled) .hamburger span {
   margin-bottom: 3rem;
 }
 
-.footer-brand img {
-  height: 45px;
+.footer-brand > img {
+  display: inline-block;
+  height: 52px;
+  width: auto;
   margin-bottom: 1rem;
+  padding: 0.5rem 0.85rem;
+  background: rgba(255, 252, 248, 0.1);
+  border: 1px solid rgba(255, 252, 248, 0.22);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.22);
+  filter:
+    brightness(1.2)
+    contrast(1.12)
+    drop-shadow(0 2px 14px rgba(0, 0, 0, 0.4));
 }
 
 .footer-brand p {
