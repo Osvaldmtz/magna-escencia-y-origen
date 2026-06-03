@@ -25,7 +25,9 @@
   --text-primary: #2B261F;
   --text-secondary: #4A433C;
   --navbar-bg: rgba(255, 252, 248, 0.96);
-  --logo-filter-navbar: brightness(0) saturate(100%) invert(22%) sepia(22%) saturate(1400%) hue-rotate(358deg) brightness(88%) contrast(96%);
+  --logo-color: #2B261F;
+  --logo-color-hero: #FFFFFF;
+  --logo-color-footer: #F5EDE6;
   --text-on-dark: #FFFFFF;
   --text-on-dark-muted: #F0E8E2;
   --gold-gradient: linear-gradient(90deg, transparent, var(--gold), transparent);
@@ -180,6 +182,9 @@ body.page-home .navbar:not(.scrolled) .hamburger span {
 .navbar-logo {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  width: 168px;
+  height: 58px;
   padding: 0.45rem 1rem;
   background: rgba(255, 252, 248, 0.98);
   border: 1px solid rgba(var(--accent-rgb), 0.28);
@@ -188,6 +193,18 @@ body.page-home .navbar:not(.scrolled) .hamburger span {
     0 2px 14px rgba(var(--bg-dark-rgb), 0.12),
     inset 0 1px 0 rgba(255, 255, 255, 1);
   transition: all 0.4s ease;
+  flex-shrink: 0;
+}
+
+.navbar-logo::before {
+  content: '';
+  display: block;
+  width: 132px;
+  height: 46px;
+  background-color: var(--logo-color);
+  -webkit-mask: url('../assets/img/logo-magna.svg') no-repeat center / contain;
+  mask: url('../assets/img/logo-magna.svg') no-repeat center / contain;
+  transition: background-color 0.4s ease, height 0.4s ease, width 0.4s ease;
 }
 
 .navbar-logo:hover {
@@ -197,16 +214,9 @@ body.page-home .navbar:not(.scrolled) .hamburger span {
     inset 0 1px 0 rgba(255, 255, 255, 1);
 }
 
-.navbar-logo img {
-  height: 48px;
-  width: auto;
-  display: block;
-  filter: var(--logo-filter-navbar);
-  transition: height 0.4s ease, filter 0.4s ease;
-}
-
-.navbar.scrolled .navbar-logo img {
+.navbar.scrolled .navbar-logo::before {
   height: 40px;
+  width: 118px;
 }
 
 body.page-home .navbar:not(.scrolled) .navbar-logo {
@@ -218,12 +228,31 @@ body.page-home .navbar:not(.scrolled) .navbar-logo {
     inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
-body.page-home .navbar:not(.scrolled) .navbar-logo img {
-  filter:
-    brightness(1.2)
-    contrast(1.15)
-    drop-shadow(0 2px 10px rgba(0, 0, 0, 0.55))
-    drop-shadow(0 0 18px rgba(255, 252, 248, 0.35));
+body.page-home .navbar:not(.scrolled) .navbar-logo::before {
+  background-color: var(--logo-color-hero);
+}
+
+.footer-logo {
+  display: inline-block;
+  width: 168px;
+  height: 58px;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0.85rem;
+  background: rgba(255, 252, 248, 0.1);
+  border: 1px solid rgba(255, 252, 248, 0.22);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.22);
+}
+
+.footer-logo::before {
+  content: '';
+  display: block;
+  width: 132px;
+  height: 46px;
+  margin: 0 auto;
+  background-color: var(--logo-color-footer);
+  -webkit-mask: url('../assets/img/logo-magna.svg') no-repeat center / contain;
+  mask: url('../assets/img/logo-magna.svg') no-repeat center / contain;
 }
 
 .navbar-menu {
@@ -791,21 +820,6 @@ body.page-home .navbar:not(.scrolled) .navbar-logo img {
   margin-bottom: 3rem;
 }
 
-.footer-brand > img {
-  display: inline-block;
-  height: 52px;
-  width: auto;
-  margin-bottom: 1rem;
-  padding: 0.5rem 0.85rem;
-  background: rgba(255, 252, 248, 0.1);
-  border: 1px solid rgba(255, 252, 248, 0.22);
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.22);
-  filter:
-    brightness(1.2)
-    contrast(1.12)
-    drop-shadow(0 2px 14px rgba(0, 0, 0, 0.4));
-}
 
 .footer-brand p {
   font-size: 0.9rem;
