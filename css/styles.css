@@ -996,24 +996,6 @@ input[type="tel"] {
   min-height: 250px;
 }
 
-.about-gallery figure::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border: 1px solid rgba(var(--accent-rgb), 0.25);
-  pointer-events: none;
-}
-
-.about-gallery-main::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border: 1px solid rgba(var(--accent-rgb), 0.2);
-  transform: translate(12px, 12px);
-  pointer-events: none;
-  z-index: 1;
-}
-
 .certifications {
   background: var(--bg-secondary);
 }
@@ -1604,10 +1586,6 @@ input[type="tel"] {
 
   .about-gallery {
     grid-template-columns: 1fr;
-  }
-
-  .about-gallery-main::before {
-    display: none;
   }
 
   .about-gallery-main img,
