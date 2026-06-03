@@ -22,8 +22,9 @@
   --gold: #8B5E45;
   --gold-light: #A67C5B;
   --gold-on-dark: #F5EDE6;
-  --text-primary: #3A342E;
-  --text-secondary: #5C534C;
+  --text-primary: #2B261F;
+  --text-secondary: #4A433C;
+  --navbar-bg: rgba(255, 252, 248, 0.96);
   --text-on-dark: #FFFFFF;
   --text-on-dark-muted: #F0E8E2;
   --gold-gradient: linear-gradient(90deg, transparent, var(--gold), transparent);
@@ -38,7 +39,7 @@ html {
 
 body {
   font-family: 'Raleway', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   background-color: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.7;
@@ -82,7 +83,7 @@ h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
 
 .section-subtitle {
   font-family: 'Raleway', sans-serif;
-  font-weight: 300;
+  font-weight: 500;
   font-size: 0.85rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
@@ -127,36 +128,46 @@ h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
   z-index: 1000;
   padding: 1.2rem 0;
   transition: all 0.4s ease;
-  background: transparent;
+  background: var(--navbar-bg);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(var(--accent-rgb), 0.18);
+  box-shadow: 0 1px 20px rgba(var(--bg-dark-rgb), 0.06);
 }
 
 .navbar.scrolled {
-  background: rgba(var(--bg-primary-rgb), 0.95);
-  backdrop-filter: blur(20px);
   padding: 0.8rem 0;
-  box-shadow: 0 1px 30px rgba(var(--bg-dark-rgb), 0.1);
+  box-shadow: 0 2px 24px rgba(var(--bg-dark-rgb), 0.12);
 }
 
-.navbar:not(.scrolled) .navbar-menu a {
+body.page-home .navbar:not(.scrolled) {
+  background: transparent;
+  border-bottom-color: transparent;
+  box-shadow: none;
+}
+
+body.page-home .navbar:not(.scrolled) .navbar-menu a {
   color: var(--text-on-dark);
+  text-shadow: 0 1px 12px rgba(var(--bg-dark-rgb), 0.45);
 }
 
-.navbar:not(.scrolled) .navbar-menu a:hover {
+body.page-home .navbar:not(.scrolled) .navbar-menu a:hover,
+body.page-home .navbar:not(.scrolled) .navbar-menu a.active {
   color: var(--gold-on-dark);
 }
 
-.navbar:not(.scrolled) .btn-cta-nav {
-  border-color: var(--gold-on-dark);
-  color: var(--gold-on-dark) !important;
+body.page-home .navbar:not(.scrolled) .btn-cta-nav {
+  border-color: var(--text-on-dark);
+  color: var(--text-on-dark) !important;
+  text-shadow: 0 1px 10px rgba(var(--bg-dark-rgb), 0.4);
 }
 
-.navbar:not(.scrolled) .btn-cta-nav:hover {
-  background: var(--gold-on-dark);
-  color: #1F2D18 !important;
+body.page-home .navbar:not(.scrolled) .btn-cta-nav:hover {
+  background: var(--text-on-dark);
+  color: #2B261F !important;
 }
 
-.navbar:not(.scrolled) .hamburger span {
-  background: var(--gold-on-dark);
+body.page-home .navbar:not(.scrolled) .hamburger span {
+  background: var(--text-on-dark);
 }
 
 .navbar .container {
@@ -184,11 +195,16 @@ h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
 .navbar-menu a {
   color: var(--text-primary);
   font-size: 0.85rem;
-  font-weight: 300;
+  font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   position: relative;
   padding-bottom: 4px;
+}
+
+.navbar-menu a.active {
+  color: var(--gold);
+  font-weight: 600;
 }
 
 .navbar-menu a::after {
@@ -814,6 +830,12 @@ h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
 
 .about-text h1 {
   margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.about-text .section-subtitle {
+  color: var(--gold);
+  font-weight: 500;
 }
 
 .about-text p {
@@ -1425,16 +1447,19 @@ h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
 
   .navbar-menu a {
     color: var(--text-primary);
+    font-weight: 500;
   }
 
   .navbar-menu a:hover,
   .navbar-menu a.active {
     color: var(--gold);
+    font-weight: 600;
   }
 
   .navbar .btn-cta-nav {
     border-color: var(--gold);
     color: var(--gold) !important;
+    font-weight: 500;
   }
 
   .hamburger {
