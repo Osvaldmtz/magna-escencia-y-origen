@@ -26,8 +26,8 @@
   --text-secondary: #4A433C;
   --navbar-bg: rgba(255, 252, 248, 0.96);
   --logo-color-hero: #FFFFFF;
-  --logo-nav-height: 68px;
-  --logo-nav-height-scrolled: 56px;
+  --logo-nav-height: 88px;
+  --logo-nav-height-scrolled: 68px;
   --logo-nav-ratio: 2.2917;
   --logo-footer-height: 72px;
   --text-on-dark: #FFFFFF;
@@ -170,7 +170,8 @@ body.page-home .navbar:not(.scrolled) {
 
 body.page-home .navbar:not(.scrolled) .navbar-menu a {
   color: var(--text-on-dark);
-  text-shadow: 0 1px 12px rgba(var(--bg-dark-rgb), 0.45);
+  font-weight: 600;
+  text-shadow: 0 1px 10px rgba(var(--bg-dark-rgb), 0.65), 0 0 1px rgba(0, 0, 0, 0.35);
 }
 
 body.page-home .navbar:not(.scrolled) .navbar-menu a:hover,
@@ -210,7 +211,7 @@ body.page-home .navbar:not(.scrolled) .hamburger span {
   display: block;
   height: var(--logo-nav-height);
   width: auto;
-  max-height: 72px;
+  max-height: 96px;
   transition: height 0.4s ease, opacity 0.3s ease;
 }
 
@@ -218,11 +219,11 @@ body.page-home .navbar:not(.scrolled) .hamburger span {
   display: none;
   height: var(--logo-nav-height);
   width: calc(var(--logo-nav-height) * var(--logo-nav-ratio));
-  max-height: 72px;
+  max-height: 96px;
   background-color: var(--logo-color-hero);
   -webkit-mask: url('../assets/img/logo-magna.svg') no-repeat center / contain;
   mask: url('../assets/img/logo-magna.svg') no-repeat center / contain;
-  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.35));
+  filter: drop-shadow(0 2px 14px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 2px rgba(0, 0, 0, 0.3));
   transition: height 0.4s ease, width 0.4s ease;
 }
 
@@ -268,8 +269,8 @@ body.page-home .navbar:not(.scrolled) .navbar-logo-light {
 
 .navbar-menu a {
   color: var(--text-primary);
-  font-size: 0.85rem;
-  font-weight: 500;
+  font-size: 0.9rem;
+  font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   position: relative;
@@ -278,7 +279,7 @@ body.page-home .navbar:not(.scrolled) .navbar-logo-light {
 
 .navbar-menu a.active {
   color: var(--gold);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .navbar-menu a::after {
@@ -306,7 +307,8 @@ body.page-home .navbar:not(.scrolled) .navbar-logo-light {
   border: 1px solid var(--gold);
   color: var(--gold) !important;
   padding: 0.6rem 1.8rem;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   transition: all 0.3s ease;
@@ -1535,19 +1537,19 @@ input[type="tel"] {
 
   .navbar-menu a {
     color: var(--text-primary);
-    font-weight: 500;
+    font-weight: 600;
   }
 
   .navbar-menu a:hover,
   .navbar-menu a.active {
     color: var(--gold);
-    font-weight: 600;
+    font-weight: 700;
   }
 
   .navbar .btn-cta-nav {
     border-color: var(--gold);
     color: var(--gold) !important;
-    font-weight: 500;
+    font-weight: 600;
   }
 
   .hamburger {
@@ -1555,8 +1557,8 @@ input[type="tel"] {
   }
 
   :root {
-    --logo-nav-height: 56px;
-    --logo-nav-height-scrolled: 48px;
+    --logo-nav-height: 64px;
+    --logo-nav-height-scrolled: 54px;
     --logo-footer-height: 60px;
   }
 
