@@ -992,41 +992,66 @@ input[type="tel"] {
   pointer-events: none;
 }
 
-.about-gallery {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.25rem;
-  max-width: 420px;
+.about-spot {
+  max-width: 340px;
   margin-left: auto;
 }
 
-.about-gallery figure {
-  position: relative;
-  margin: 0;
+.about-spot .oval-image {
   width: 100%;
 }
 
-.about-gallery-main .oval-image {
-  width: 100%;
-  max-width: 340px;
-  margin: 0 auto;
-}
-
-.about-gallery .oval-image img,
-.about-gallery .arch-image img {
+.about-spot .oval-image img,
+.about-split-media .arch-image img {
   filter: var(--image-warm-filter);
 }
 
-.about-gallery-thumbs {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  width: 100%;
+.about-story-intro,
+.about-story-outro {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.about-gallery-item .arch-image {
+.about-story-intro p,
+.about-story-outro p,
+.about-split-text p {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.9;
+  margin-bottom: 1.5rem;
+}
+
+.about-split {
+  display: grid;
+  grid-template-columns: 1fr minmax(220px, 300px);
+  gap: 4rem;
+  align-items: center;
+  margin: 5rem auto;
+  max-width: 1050px;
+}
+
+.about-split--reverse {
+  grid-template-columns: minmax(220px, 300px) 1fr;
+}
+
+.about-split-media {
+  margin: 0;
+}
+
+.about-split-media .arch-image {
   width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.about-split--reverse .about-split-media .arch-image {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.about-split:not(.about-split--reverse) .about-split-media .arch-image {
+  margin-left: auto;
+  margin-right: 0;
 }
 
 .certifications {
@@ -1503,14 +1528,23 @@ input[type="tel"] {
     height: auto;
   }
 
-  .about-gallery {
-    max-width: 480px;
-    margin-left: auto;
-    margin-right: auto;
+  .about-split,
+  .about-split--reverse {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin: 3.5rem auto;
   }
 
-  .about-gallery-main .oval-image {
+  .about-split-media .arch-image {
+    max-width: 260px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .about-spot {
     max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .service-detail-content {
@@ -1609,16 +1643,16 @@ input[type="tel"] {
     display: none;
   }
 
-  .about-gallery {
-    max-width: 100%;
-  }
-
-  .about-gallery-main .oval-image {
+  .about-spot {
     max-width: 280px;
   }
 
-  .about-gallery-thumbs {
-    gap: 0.75rem;
+  .about-split {
+    margin: 3rem auto;
+  }
+
+  .about-split-media .arch-image {
+    max-width: 240px;
   }
 }
 
