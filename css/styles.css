@@ -997,11 +997,11 @@ input[type="tel"] {
   margin-left: auto;
 }
 
-.about-spot .oval-image {
+.about-spot .arch-image {
   width: 100%;
 }
 
-.about-spot .oval-image img,
+.about-spot .arch-image img,
 .about-split-media .arch-image img {
   filter: var(--image-warm-filter);
 }
